@@ -749,6 +749,7 @@ a {
   width: 70%;      /* larghezza massima del container */
 /* non superare 600px */
   margin: 40px auto; /* centrata e con margine sopra e sotto */
+  display: none;
 }
 
 .europa img {
@@ -828,7 +829,7 @@ a {
     margin-top: auto;
     flex-direction: column;
     flex: 0;
-    padding-bottom: 8%;
+    padding-bottom: 20%;
   }
 
   .menu_container {

@@ -395,9 +395,10 @@ button:hover {
   position: relative;
 }
 
+
 .cont1 {
   position: absolute;
-  bottom: 20vw;
+  bottom: 25vw;
   width: 85%;
   height: 80%;
   display: flex;
