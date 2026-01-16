@@ -373,7 +373,7 @@ a {
 
             .intro-text {
                 width: 80%;
-                overflow: visible;
+                overflow-x: visible;
             }
 
             .intro-line {
