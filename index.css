@@ -291,7 +291,7 @@ a {
             position: relative;
             height: 200px;
             width: 60vw;
-            overflow: hidden;
+            overflow: visible;
             margin-right: auto;
         }
 
