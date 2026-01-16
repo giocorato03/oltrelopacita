@@ -369,11 +369,12 @@ a {
             .arrow-btn {
                 width: 200px;
                 height: 200px;
+                z-index: 300;
             }
 
             .intro-text {
                 width: 80%;
-                overflow-x: visible;
+                
             }
 
             .intro-line {
@@ -402,6 +403,10 @@ a {
 
             .arrow-btn {
                 margin-bottom: 20%;
+            }
+
+            .arrow-btn svg {
+                pointer-events: none;
             }
 
             .circle {
