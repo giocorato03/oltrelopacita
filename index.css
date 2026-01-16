@@ -291,7 +291,7 @@ a {
             position: relative;
             height: 200px;
             width: 60vw;
-            overflow: visible;
+            overflow: hidden;
             margin-right: auto;
         }
 
@@ -373,6 +373,7 @@ a {
 
             .intro-text {
                 width: 80%;
+                overflow: visible;
             }
 
             .intro-line {
