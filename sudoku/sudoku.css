@@ -1,0 +1,357 @@
+@font-face {
+  font-family: 'INTER';
+  src: url('./Inter/static/Inter_24pt-Black.ttf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'INTER';
+  src: url('./Inter/static/Inter_24pt-ExtraBold.ttf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'INTER';
+  src: url('./Inter/static/Inter_24pt-Bold.ttf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'INTER';
+  src: url('./Inter/static/Inter_24pt-SemiBold.ttf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'INTER';
+  src: url('./Inter/static/Inter_24pt-Medium.ttf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'INTER';
+  src: url('./Inter/static/Inter_24pt-Regular.ttf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'INTER';
+  src: url('./Inter/static/Inter_24pt-Light.ttf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'INTER';
+  src: url('./Inter/static/Inter_24pt-ExtraLight.ttf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'INTER';
+  src: url('./Inter/static/Inter_24pt-Thin.ttf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, span, button, div {
+    font-family: 'INTER', Helvetica, sans-serif;
+}
+
+.app {
+    position: absolute;
+    bottom: 0%;
+    width: 85%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+.title_container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.sudoku-title {
+    text-align: left;
+    width: 50%;
+    height: auto;
+    font-size: 35px;
+    font-weight: 700;
+    justify-self: left;
+}
+
+.sudoku-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Container holding the grid and number buttons */
+.sudoku-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+/* The 4x4 Sudoku grid */
+.sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(4, 70px);
+    gap: 2px;
+    position: relative;
+}
+
+/* Individual Sudoku cell */
+.sudoku-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #2b2b2b;
+    color: #f6f6f6;
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#numbers {
+    display:flex; 
+    width: 82%;
+    flex-direction:column; 
+    gap: 15px;
+    margin-top: 15px;
+
+}
+
+/* Number buttons next to the grid */
+.number-button {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.9px solid #2b2b2b;
+    cursor: pointer;
+    border-radius: 100px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.number-button.active {
+    background-color: #2b2b2b; /* il colore che vuoi per evidenziare */
+    color: #f6f6f6;            /* testo contrastante */
+}
+
+/* Result text displayed below the grid */
+.sudoku-result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Suggestion button for CSS-only toggle */
+.suggestion-button {
+    position: relative;
+    padding: 12px 20px;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2b2b2b;
+    color: #f6f6f6;
+    border: none;
+    display: inline-block;
+
+}
+
+/* Tooltip for suggestion (hidden by default) */
+.suggestion-tooltip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    width: 70%;
+    height: auto;
+    background-color: #f6f6f6;
+    padding: 15px 20px;
+    border-radius: 25px;
+    align-content: center;
+    text-align: left;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    line-height: 18px;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 15px;
+}
+
+.titleTooltip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#title {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Tooltip visible state controlled by JS */
+.suggestion-tooltip.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.testata {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 42px;
+    height: 100%;
+    align-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+text {
+padding-top: 5px;
+}
+
+.triangle {
+    height: 110%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.triangle svg {
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.help {
+    color: #2b2b2b;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .app {
+        flex-direction: row;
+        height: 60%;
+        gap: 0px;
+        justify-content: space-between;
+    }
+
+    .testata {
+        width: 40%;
+        margin: 0;
+
+    }
+
+    .sudoku-container {
+        flex-direction: row;
+        gap: 0px;
+        justify-content: space-between;
+        height: 100%;
+        position: relative;
+        border-style: solid;
+        border-width: 0.8px;
+        border-color: #2b2b2b;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-color: #f6f6f6;
+        box-sizing: border-box;
+        width: 52.5%;
+    }
+
+    #numbers {
+        width: 50%;
+        gap: 10px;
+        padding-right: 5%;
+        padding-left: 5%;
+        margin-bottom: auto;
+        margin-top: 15%;
+    }
+    
+
+    .sudoku-grid {
+        margin-left: 10%;
+    }
+
+    .triangle {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: auto;
+        margin-bottom: 5%;
+        margin-right: 2.5%;
+        z-index: 50;
+    }
+
+    .number-button {
+        border-width: 1px;
+    }
+
+    .title {
+        font-size: 60px;
+        line-height: 1.2;
+    }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<section id="screen-loading" class="screen active">
+    <video id="introVideo" autoplay muted playsinline>
+        <source id="desk" src="typo.mp4" type="video/mp4">
+    </video>
+    <video id="introVideo2" autoplay muted playsinline>
+        <source id="mbile" src="mobile_loading.mp4" type="video/mp4"> 
+    </video>
+    <div id="enterBtn" class="center-btn">ENTRA</div>
+</section>
+
+<div id="screen-intro" class="screen">
+    <div class="intro-wrapper">
+        <div class="intro-text">
+            <div class="intro-line text-1 active">
+                Ti è mai capitato di affrontare un lavoro senza sapere esattamente cosa fosse richiesto?
+            </div>
+            <div class="intro-line text-2">
+                Questo spazio invita a fermarsi e riflettere sul ruolo della comunicazione nella nostra quotidianità.
+            </div>
+        </div>
+        <button id="nextIntro" class="arrow-btn" aria-label="Avanti">
+            <svg width="300" height="300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12V32" stroke="currentColor" stroke-width="0.15" stroke-linecap="round"/>
+                <path d="M17 24L24 32L31 24" stroke="currentColor" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<section id="screen-home" class="screen">
+    <header>
+        <div class="logo">
+            <a href="../index.html">OLTRE L'OPACITÀ</a>
+        </div>
+        <div class="hamburger">
+            <div id="aboutBtn"></div>
+            <div></div>
+        </div>
+    </header>
+    <div class="home-container">
+        <div class="circle"></div>
+        <div class="blur-div"></div>
+        <div class="buttons">
+            <div class="sec_title" id="exp">
+                <a href="inter.html">
+                    <div class="cont_exp">EXPERIENCE</div>
+                    <div class="desc_button" id="esperienzaBtn">
+                        Attraversa l'opacità
+                    </div>
+                </a>
+            </div>
+            <div class="sec_title" id="info">
+                <a href="information/info_landing.html">
+                    <div class="cont_exp">INFORMAZIONI</div>
+                    <div class="desc_button" id="campagnaBtn">
+                        Approfondisci la trasparenza
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<script>
+const screenLoading = document.getElementById('screen-loading');
+const screenIntro = document.getElementById('screen-intro');
+const screenHome = document.getElementById('screen-home');
+
+const enterBtn = document.getElementById('enterBtn');
+const nextIntro = document.getElementById('nextIntro');
+
+const text1 = document.querySelector('.text-1');
+const text2 = document.querySelector('.text-2');
+
+let introStep = 0;
+
+
+setTimeout(() => {
+    enterBtn.classList.add('active');
+}, 5000)
+
+enterBtn.addEventListener('click', () => {
+    screenLoading.classList.remove('active');
+});
+
+nextIntro.addEventListener('click', () => {
+    if (introStep === 0) {
+        text1.classList.add('exit');
+        text1.classList.remove('active');
+
+        text2.classList.add('active');
+
+        introStep = 1;
+    } else {
+        screenIntro.classList.add('exit');
+    }
+});
+
+const arrow = document.querySelector('.arrow-btn');
+if (arrow) {
+    arrow.addEventListener('click', () => {
+        arrow.classList.add('click');
+
+        setTimeout(() => {
+            arrow.classList.remove('click');
+        }, 150); // durata del “flash”
+    });
+}
+
+
+const blurDiv = document.querySelector('.blur-div');
+const esperienzaLink = document.querySelector('#exp a');
+const campagnaLink = document.querySelector('#info a');
+const isMobile = window.innerWidth <= 768;
+
+esperienzaLink.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (isMobile) {
+        blurDiv.style.height = '110%';
+        blurDiv.style.top = '-10%';
+    } else {
+        blurDiv.style.right = '0';
+        blurDiv.style.width = '100%';
+    }
+
+    
+    setTimeout(() => {
+        window.location.href = esperienzaLink.href;
+    }, 2000);
+});
+
+campagnaLink.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (isMobile) {
+        blurDiv.style.height = '0';
+        blurDiv.style.top = '100%';
+    } else {
+        blurDiv.style.right = '100%';
+        blurDiv.style.width = '100%';
+    }
+    
+
+    setTimeout(() => {
+        window.location.href = campagnaLink.href;
+    }, 2000);
+});
+</script>
+</body>
+</html>
+
+<!--ipconfig getifaddr en0
+
+http://172.20.10.6:5500/index.html
+-->

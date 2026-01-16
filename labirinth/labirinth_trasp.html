@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Labyrinth Task</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="labirinth.css">
+</head>
+<body data-mode="trasparent">
+    <header>
+        <div class="logo">
+            <a href="../index.html">OLTRE L'OPACITÀ</a>
+        </div>
+        <div class="hamburger">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="hamburger-menu">
+                <div>
+                    <a href="../information/info_landing.html">Informazioni</a>
+                </div>
+                <div id="aboutBtn">About</div>
+                <div>Social</div>
+                <div class="quit_hamburger">
+                    <div>
+                        <svg class="hamburger-close" width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="1" y1="23" x2="23" y2="1" stroke="currentColor" stroke-width="0.3" stroke-linecap="round"/>
+                            <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="0.3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </header>
+    <div class="head">
+        <h3>Task 3</h3>
+        <div id="quit" class="quit-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
+                <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="timer_tot">
+        <div class="timer-sopra">
+            <div class="timer_title">TEMPO RIMANENTE</div>
+            <span id="timer" class="timer"></span>
+        </div>
+        <div id="timerContainer" class="timerContainer">
+            <div id="timerBar" class="timerBar"></div>    
+        </div>
+        <div id="finalMessage"></div>
+    </div>
+
+    <div class="app">
+        <div class="testata">
+            <div class="title">Trova l'uscita</div>
+            <div class="triangle">
+                <svg id="indication-btn" width="90" height="90" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" cursor="pointer">
+                    <circle cx="50" cy="50" r="45" fill="transparent" stroke="black" stroke-width="1"/>
+                    <text x="50" y="55" text-anchor="middle" dominant-baseline="middle" font-size="60" font-family="INTER" fill="black" font-weight="100">?</text>
+                </svg>
+                <div class="help">INDICAZIONI</div>
+            </div>  
+        </div>
+        <!--<div id="status" class="status-debug"></div>-->
+        <div class="contenitore-labirinto">
+            <div class="labyrinth-canvas-wrapper">
+                <canvas id="canvas"></canvas>
+            </div>
+    
+            <div id="hint" class="hint hidden">
+                <div class="hint-box">
+                    <div class="hint-head">
+                        <div id="indic-title">INDICAZIONI</div>
+                        <div id="close-hint">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <line x1="18" y1="6" x2="6" y2="18" stroke="black" stroke-width="1" stroke-linecap="round"/>
+                                <line x1="6" y1="6" x2="18" y2="18" stroke="black" stroke-width="1" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="hint-text" class="hint-text"></div>
+                </div>
+                
+            </div>
+    
+            <div id="controls" class="controls">
+                <div class="direction">
+                    <button id="up">↑</button>
+                    <button id="down">↓</button>
+                </div>
+                <div class="direction">
+                    <button id="left">←</button>
+                    <button id="right">→</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="trasparentOverlay" class="animationTrasp">
+        <div class="contTrasp" id="parte1">
+            <div class="uptext">
+                <div>Hai notato la differenza?</div>
+                <div>La chiarezza facilita ogni passaggio.</div>
+            </div>
+            <div class="down">Comunicare in modo trasparente favorisce l'orientamento, pertanto dovrebbe diventare una consuetudine.</div>
+        </div>
+        <div class="contTrasp" id="parte2">
+            <div class="text3">Scegli come proseguire</div>
+            <div class="text4">Immergiti in un’altra esperienza o apprendi cos'è la trasparenza</div>
+            <div class="linkfinal">
+                <!--<a href="../password/password.html" id="taskBtn">Esperienza</a>-->
+                <a href="../information/info_landing.html">Area informativa</a>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="../main.js"></script>
+    <script src="labirinth.js"></script>
+</body>
+</html>

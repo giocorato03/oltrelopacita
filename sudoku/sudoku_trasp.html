@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="sudoku.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">OLTRE L'OPACITÀ</a>
+        </div>
+        <div class="hamburger">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="hamburger-menu">
+                <div>
+                    <a href="../information/info_landing.html">Informazioni</a>
+                </div>
+                <div id="aboutBtn">About</div>
+                <div>Social</div>
+                <div class="quit_hamburger">
+                    <div>
+                        <svg class="hamburger-close" width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="1" y1="23" x2="23" y2="1" stroke="currentColor" stroke-width="0.3" stroke-linecap="round"/>
+                            <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="0.3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </header>
+    <div class="head">
+        <h3>Task 1</h3>
+        <div class="" id="quitTrasp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
+                <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+    <div class="timer_tot">
+        <div class="timer-sopra">
+            <div class="timer_title">TEMPO RIMANENTE</div>
+        <span id="timerSpanTrasp" class="timer"></span>
+        </div>
+        <div id="timerContainer" class="timerContainer">
+            <div id="timerBarTrasp" class="timerBar">
+            </div>
+        </div>
+    </div>
+
+    <div class="app">
+        <div class="testata">
+            <div class="title">Riempi <br>la griglia</div>
+            <div class="triangle">
+                <svg id="traspSuggestion" width="90" height="90" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" cursor="pointer">
+                    <circle cx="50" cy="50" r="45" fill="transparent" stroke="black" stroke-width="1"/>
+                    <text x="50" y="55" text-anchor="middle" dominant-baseline="middle" font-size="60" font-family="INTER" fill="black" font-weight="100">?</text>
+                </svg>
+                <div class="help">INDICAZIONI</div>
+            </div>  
+        </div>
+        <div id="sudoku-container" class="sudoku-container">
+
+            <div id="grid" class="sudoku-grid">
+                <div id="suggestion-tooltip" class="suggestion-tooltip">
+                    <div class="titleTooltip">
+                        <div id="title"></div>
+                        <div id="closeTooltip">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                                <line x1="18" y1="6" x2="6" y2="18" stroke="black" stroke-width="1" stroke-linecap="round"/>
+                                <line x1="6" y1="6" x2="18" y2="18" stroke="black" stroke-width="1" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="tooltip"></div>
+                </div>
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+                <div class="cell sudoku-cell" data-cell></div>
+            </div>
+
+            <div id="numbers">
+                <div class="line">
+                    <div class="number-button" data-num="1">1</div>
+                    <div class="number-button" data-num="2">2</div>
+                    <div class="number-button" data-num="3">3</div>
+                    <div class="number-button" data-num="4">4</div>
+                </div>
+                <div class="line">
+                    <div class="number-button" data-num="5">5</div>
+                    <div class="number-button" data-num="6">6</div>
+                    <div class="number-button" data-num="7">7</div>
+                    <div class="number-button" data-num="8">8</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="result" class="sudoku-result"></div>
+    
+
+    <div id="trasparentOverlay" class="animationTrasp">
+        <div class="contTrasp" id="parte1">
+            <div class="uptext">
+                <div>Hai notato la differenza?</div>
+                <div>La chiarezza facilita ogni passaggio.</div>
+            </div>
+            <div class="down">Comunicare in modo trasparente favorisce l'orientamento, pertanto dovrebbe diventare una consuetudine.</div>
+        </div>
+        <div class="contTrasp" id="parte2">
+            <div class="text3">Scegli come proseguire</div>
+            <div class="text4">Immergiti in un’altra esperienza o apprendi cos'è la trasparenza</div>
+            <div class="linkfinal">
+                <a href="../labirinth/labirinth.html" id="taskBtn">Esperienza</a>
+                <a href="../information/info_landing.html">Area informativa</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../main.js"></script>
+    <script src="sudoku.js"></script>
+</body>
+</html>
